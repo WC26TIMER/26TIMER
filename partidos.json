@@ -1,27 +1,27 @@
 {
   "Alemania": {
-    "rival": "Argelia",
-    "fecha": "2026-06-11T20:00:00",
+    "rival": "Curazao",
+    "fecha": "2026-06-14T12:00:00",
     "escudo": "escudos/alemania.png",
-    "escudoRival": "escudos/argelia.png"
+    "escudoRival": "escudos/Curazao.png"
   },
   "Argelia": {
-    "rival": "Arabia Saudí",
-    "fecha": "2026-06-12T20:00:00",
+    "rival": "Argentina",
+    "fecha": "2026-06-16T20:00:00",
     "escudo": "escudos/argelia.png",
-    "escudoRival": "escudos/arabia_saudi.png"
+    "escudoRival": "escudos/Argentina.png"
   },
   "Arabia Saudí": {
-    "rival": "Argentina",
-    "fecha": "2026-06-13T20:00:00",
+    "rival": "Uruguay",
+    "fecha": "2026-06-15T17:00:00",
     "escudo": "escudos/arabia_saudi.png",
-    "escudoRival": "escudos/argentina.png"
+    "escudoRival": "escudos/Uruguay.png"
   },
   "Argentina": {
-    "rival": "Australia",
-    "fecha": "2026-06-14T20:00:00",
+    "rival": "Argelia",
+    "fecha": "2026-06-16T20:00:00",
     "escudo": "escudos/argentina.png",
-    "escudoRival": "escudos/australia.png"
+    "escudoRival": "escudos/Argelia.png"
   },
   "Australia": {
     "rival": "Austria",
