@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FIFA World Cup 2026 Timer</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    overflow:hidden;
+}
+
+/* INTRO */
+
+#intro{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#intro video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* MAIN */
+
+#main{
+    display:none;
+    width:100%;
+    min-height:100vh;
+
+    background-image:url("fondo.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow-y:auto;
+}
+
+.overlay{
+    width:100%;
+    min-height:100vh;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+}
+
+.logo{
+    width:180px;
+    margin-bottom:25px;
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.team-list{
+    width:100%;
+    max-width:800px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+}
+
+.team{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(4px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:white;
+    text-align:center;
+
+    padding:12px;
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.team:hover{
+    background:rgba(255,255,255,.25);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+
+<div id="intro">
+    <video id="introVideo" autoplay muted playsinline>
+        <source src="intro.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- MAIN -->
+
+<div id="main">
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="overlay">
+
+        <img src="logo.png" class="logo" alt="FIFA World Cup 2026">
+
+        <h1>Selecciones Clasificadas al Mundial 2026</h1>
+
+        <div class="team-list">
+
+            <div class="team">Argentina</div>
+            <div class="team">Brasil</div>
+            <div class="team">Uruguay</div>
+            <div class="team">Colombia</div>
+            <div class="team">Ecuador</div>
+            <div class="team">Paraguay</div>
+
+            <div class="team">Estados Unidos</div>
+            <div class="team">México</div>
+            <div class="team">Canadá</div>
+            <div class="team">Costa Rica</div>
+            <div class="team">Panamá</div>
+
+            <div class="team">Alemania</div>
+            <div class="team">España</div>
+            <div class="team">Francia</div>
+            <div class="team">Italia</div>
+            <div class="team">Inglaterra</div>
+            <div class="team">Portugal</div>
+            <div class="team">Países Bajos</div>
+            <div class="team">Bélgica</div>
+            <div class="team">Croacia</div>
+            <div class="team">Suiza</div>
+            <div class="team">Dinamarca</div>
+            <div class="team">Suecia</div>
+
+            <div class="team">Japón</div>
+            <div class="team">Corea del Sur</div>
+            <div class="team">Australia</div>
+            <div class="team">Irán</div>
+            <div class="team">Arabia Saudita</div>
+
+            <div class="team">Marruecos</div>
+            <div class="team">Senegal</div>
+            <div class="team">Nigeria</div>
+            <div class="team">Egipto</div>
+            <div class="team">Túnez</div>
+            <div class="team">Argelia</div>
+
+            <div class="team">Nueva Zelanda</div>
+
+            <div class="team">Perú</div>
+            <div class="team">Chile</div>
+            <div class="team">Venezuela</div>
+            <div class="team">Polonia</div>
+            <div class="team">Austria</div>
+            <div class="team">Noruega</div>
+            <div class="team">Turquía</div>
+            <div class="team">Serbia</div>
+            <div class="team">Grecia</div>
+            <div class="team">Ucrania</div>
+            <div class="team">Camerún</div>
+            <div class="team">Sudáfrica</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const video = document.getElementById("introVideo");
+const intro = document.getElementById("intro");
+const main = document.getElementById("main");
+const music = document.getElementById("bgMusic");
+
+video.addEventListener("ended", () => {
+
+    intro.style.display = "none";
+    main.style.display = "block";
+
+    music.play().catch(() => {
+        console.log("Autoplay bloqueado por el navegador");
+    });
+
+});
+
+</script>
+
+</body>
+</html>
