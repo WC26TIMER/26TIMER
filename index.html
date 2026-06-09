@@ -161,6 +161,7 @@ const main=document.getElementById('main');
 const matchView=document.getElementById('matchView');
 const music=document.getElementById('bgMusic');
 const tick=document.getElementById('tickAudio');
+const skipBtn=document.getElementById('skipBtn');
 
 let partidos={};
 let timerInterval=null;
@@ -171,16 +172,43 @@ fetch('partidos.json')
 .catch(()=>console.log('partidos.json pendiente'));
 
 document.getElementById('enterBtn').onclick=()=>{
+
  startScreen.style.display='none';
  intro.style.display='block';
+
  video.play();
+
+ skipBtn.style.display='none';
+
+ setTimeout(()=>{
+
+   if(intro.style.display!=='none'){
+      skipBtn.style.display='block';
+   }
+
+ },2000);
+
+};
+skipBtn.onclick=()=>{
+
+ video.pause();
+
+ finalizarIntro();
+
 };
 
-video.onended=()=>{
+function finalizarIntro(){
+
  intro.style.display='none';
  main.style.display='block';
+
  music.play().catch(()=>{});
-};
+
+ skipBtn.style.display='none';
+
+}
+
+video.onended=finalizarIntro;
 
 document.getElementById('selecciones').onchange=(e)=>{
  const team=e.target.value;
