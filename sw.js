@@ -1,5 +1,5 @@
-const CACHE_NAME = 'fwc26-timer-v1';
-const urlsToCache = [
+const CACHE_NAME = 'wc26-timer-v1';
+const ASSETS = [
   '/26TIMER/',
   '/26TIMER/index.html',
   '/26TIMER/manifest.json'
@@ -7,12 +7,16 @@ const urlsToCache = [
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(ASSETS);
+    })
   );
 });
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request))
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
   );
 });
