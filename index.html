@@ -16,13 +16,18 @@
 }
 
 body{
-    overflow:hidden;
+    overflow-x:hidden;
+    background:black;
 }
 
-/* INTRO */
+/* ==========================
+   INTRO
+========================== */
 
 #intro{
     position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100vh;
     background:black;
@@ -38,70 +43,105 @@ body{
     object-fit:cover;
 }
 
-/* MAIN */
+/* ==========================
+   MAIN
+========================== */
 
 #main{
     display:none;
     width:100%;
     min-height:100vh;
 
-    background-image:url("fondo.jpg");
+    background-image:url("fondo.png");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-
-    overflow-y:auto;
 }
 
 .overlay{
+
     width:100%;
     min-height:100vh;
 
-    background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.45);
 
     display:flex;
     flex-direction:column;
+    justify-content:center;
     align-items:center;
-    padding:30px;
+
+    padding:20px;
 }
 
 .logo{
-    width:180px;
+    width:220px;
+    max-width:80%;
+    margin-bottom:30px;
+}
+
+.titulo{
+    color:white;
+    font-size:2rem;
+    font-weight:bold;
+    text-align:center;
     margin-bottom:25px;
+    text-shadow:0 0 10px rgba(0,0,0,.8);
 }
 
-h1{
-    color:white;
-    margin-bottom:20px;
-    text-align:center;
-}
+#selecciones{
 
-.team-list{
-    width:100%;
-    max-width:800px;
+    width:420px;
+    max-width:90%;
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:12px;
-}
+    padding:16px;
 
-.team{
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(4px);
+    border:none;
+    border-radius:15px;
 
-    border:1px solid rgba(255,255,255,.2);
+    font-size:18px;
+    font-weight:bold;
 
-    color:white;
     text-align:center;
 
-    padding:12px;
-    border-radius:10px;
+    background:white;
+    color:#111;
 
-    transition:.3s;
+    cursor:pointer;
+
+    outline:none;
+
+    box-shadow:0 0 20px rgba(255,255,255,.35);
+
 }
 
-.team:hover{
-    background:rgba(255,255,255,.25);
+#selecciones:hover{
+    transform:scale(1.02);
+}
+
+.info{
+    margin-top:25px;
+    color:white;
+    font-size:18px;
+    text-align:center;
+    text-shadow:0 0 10px rgba(0,0,0,.8);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .logo{
+        width:180px;
+    }
+
+    .titulo{
+        font-size:1.5rem;
+    }
+
+    #selecciones{
+        width:90%;
+    }
+
 }
 
 </style>
@@ -109,15 +149,22 @@ h1{
 
 <body>
 
-<!-- INTRO -->
+<!-- ==========================
+     INTRO
+========================== -->
 
 <div id="intro">
-    <video id="introVideo" autoplay muted playsinline>
+
+    <video id="introVideo" autoplay controls playsinline>
         <source src="intro.mp4" type="video/mp4">
+        Tu navegador no soporta video.
     </video>
+
 </div>
 
-<!-- MAIN -->
+<!-- ==========================
+     MAIN
+========================== -->
 
 <div id="main">
 
@@ -127,66 +174,71 @@ h1{
 
     <div class="overlay">
 
-        <img src="logo.png" class="logo" alt="FIFA World Cup 2026">
+        <img src="logo.png"
+             alt="FIFA World Cup 2026"
+             class="logo">
 
-        <h1>Selecciones Clasificadas al Mundial 2026</h1>
+        <div class="titulo">
+            FIFA WORLD CUP 2026™
+        </div>
 
-        <div class="team-list">
+        <select id="selecciones">
 
-            <div class="team">Argentina</div>
-            <div class="team">Brasil</div>
-            <div class="team">Uruguay</div>
-            <div class="team">Colombia</div>
-            <div class="team">Ecuador</div>
-            <div class="team">Paraguay</div>
+            <option selected disabled>
+                Selecciona una selección
+            </option>
 
-            <div class="team">Estados Unidos</div>
-            <div class="team">México</div>
-            <div class="team">Canadá</div>
-            <div class="team">Costa Rica</div>
-            <div class="team">Panamá</div>
+            <option>Argentina</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Bélgica</option>
+            <option>Brasil</option>
+            <option>Camerún</option>
+            <option>Canadá</option>
+            <option>Chile</option>
+            <option>Colombia</option>
+            <option>Corea del Sur</option>
+            <option>Costa Rica</option>
+            <option>Croacia</option>
+            <option>Dinamarca</option>
+            <option>Ecuador</option>
+            <option>Egipto</option>
+            <option>España</option>
+            <option>Estados Unidos</option>
+            <option>Francia</option>
+            <option>Alemania</option>
+            <option>Grecia</option>
+            <option>Inglaterra</option>
+            <option>Irán</option>
+            <option>Italia</option>
+            <option>Japón</option>
+            <option>Marruecos</option>
+            <option>México</option>
+            <option>Nigeria</option>
+            <option>Nueva Zelanda</option>
+            <option>Noruega</option>
+            <option>Países Bajos</option>
+            <option>Panamá</option>
+            <option>Paraguay</option>
+            <option>Perú</option>
+            <option>Polonia</option>
+            <option>Portugal</option>
+            <option>Arabia Saudita</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Sudáfrica</option>
+            <option>Suecia</option>
+            <option>Suiza</option>
+            <option>Túnez</option>
+            <option>Turquía</option>
+            <option>Ucrania</option>
+            <option>Uruguay</option>
+            <option>Venezuela</option>
 
-            <div class="team">Alemania</div>
-            <div class="team">España</div>
-            <div class="team">Francia</div>
-            <div class="team">Italia</div>
-            <div class="team">Inglaterra</div>
-            <div class="team">Portugal</div>
-            <div class="team">Países Bajos</div>
-            <div class="team">Bélgica</div>
-            <div class="team">Croacia</div>
-            <div class="team">Suiza</div>
-            <div class="team">Dinamarca</div>
-            <div class="team">Suecia</div>
+        </select>
 
-            <div class="team">Japón</div>
-            <div class="team">Corea del Sur</div>
-            <div class="team">Australia</div>
-            <div class="team">Irán</div>
-            <div class="team">Arabia Saudita</div>
-
-            <div class="team">Marruecos</div>
-            <div class="team">Senegal</div>
-            <div class="team">Nigeria</div>
-            <div class="team">Egipto</div>
-            <div class="team">Túnez</div>
-            <div class="team">Argelia</div>
-
-            <div class="team">Nueva Zelanda</div>
-
-            <div class="team">Perú</div>
-            <div class="team">Chile</div>
-            <div class="team">Venezuela</div>
-            <div class="team">Polonia</div>
-            <div class="team">Austria</div>
-            <div class="team">Noruega</div>
-            <div class="team">Turquía</div>
-            <div class="team">Serbia</div>
-            <div class="team">Grecia</div>
-            <div class="team">Ucrania</div>
-            <div class="team">Camerún</div>
-            <div class="team">Sudáfrica</div>
-
+        <div class="info">
+            Próximamente: temporizador del siguiente partido.
         </div>
 
     </div>
@@ -200,14 +252,29 @@ const intro = document.getElementById("intro");
 const main = document.getElementById("main");
 const music = document.getElementById("bgMusic");
 
+/* Cuando termina la intro */
+
 video.addEventListener("ended", () => {
 
     intro.style.display = "none";
     main.style.display = "block";
 
     music.play().catch(() => {
-        console.log("Autoplay bloqueado por el navegador");
+        console.log("El navegador bloqueó la reproducción automática.");
     });
+
+});
+
+/* Si el usuario selecciona un país */
+
+document.getElementById("selecciones").addEventListener("change", function(){
+
+    const seleccion = this.value;
+
+    alert(
+        "Has seleccionado: " + seleccion +
+        "\n\nEn el siguiente paso agregaremos el temporizador del próximo partido."
+    );
 
 });
 
