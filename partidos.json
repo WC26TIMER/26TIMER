@@ -2,19 +2,19 @@
   "Alemania": {
     "rival": "Curazao",
     "fecha": "2026-06-14T12:00:00",
-    "escudo": "escudos/alemania.png",
+    "escudo": "escudos/Alemania.png",
     "escudoRival": "escudos/Curazao.png"
   },
   "Argelia": {
     "rival": "Argentina",
     "fecha": "2026-06-16T20:00:00",
-    "escudo": "escudos/argelia.png",
+    "escudo": "escudos/Argelia.png",
     "escudoRival": "escudos/Argentina.png"
   },
   "Arabia Saudí": {
     "rival": "Uruguay",
     "fecha": "2026-06-15T17:00:00",
-    "escudo": "escudos/arabia_saudi.png",
+    "escudo": "escudos/Arabia_saudi.png",
     "escudoRival": "escudos/Uruguay.png"
   },
   "Argentina": {
@@ -24,34 +24,34 @@
     "escudoRival": "escudos/Argelia.png"
   },
   "Australia": {
-    "rival": "Austria",
-    "fecha": "2026-06-15T20:00:00",
+    "rival": "Turquia",
+    "fecha": "2026-06-13T23:00:00",
     "escudo": "escudos/australia.png",
-    "escudoRival": "escudos/austria.png"
+    "escudoRival": "escudos/Turquia.png"
   },
   "Austria": {
-    "rival": "Bélgica",
-    "fecha": "2026-06-16T20:00:00",
+    "rival": "Jordania",
+    "fecha": "2026-06-16T23:00:00",
     "escudo": "escudos/austria.png",
-    "escudoRival": "escudos/belgica.png"
+    "escudoRival": "escudos/Jordania.png"
   },
   "Bélgica": {
-    "rival": "Bosnia y Herzegovina",
-    "fecha": "2026-06-17T20:00:00",
+    "rival": "Egipto",
+    "fecha": "2026-06-15T14:00:00",
     "escudo": "escudos/belgica.png",
-    "escudoRival": "escudos/bosnia_y_herzegovina.png"
+    "escudoRival": "escudos/Egipto.png"
   },
   "Bosnia y Herzegovina": {
-    "rival": "Brasil",
-    "fecha": "2026-06-18T20:00:00",
+    "rival": "Canada",
+    "fecha": "2026-06-12T14:00:00",
     "escudo": "escudos/bosnia_y_herzegovina.png",
-    "escudoRival": "escudos/brasil.png"
+    "escudoRival": "escudos/Canada.png"
   },
   "Brasil": {
-    "rival": "Cabo Verde",
-    "fecha": "2026-06-19T20:00:00",
+    "rival": "Marruecos",
+    "fecha": "2026-06-13T17:00:00",
     "escudo": "escudos/brasil.png",
-    "escudoRival": "escudos/cabo_verde.png"
+    "escudoRival": "escudos/Marruecos.png"
   },
   "Cabo Verde": {
     "rival": "Canadá",
