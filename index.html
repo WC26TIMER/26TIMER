@@ -9,8 +9,8 @@
 <style>
 
 @font-face {
-    font-family: 'FWC26';
-    src: url('FWC26.ttf') format('truetype');
+    font-family: 'FWC2026';
+    src: url('FWC2026-SemiExpandedBlack.e378fa1c.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,12 +19,67 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'FWC26', Arial, sans-serif;
+    font-family:'FWC2026', Arial, sans-serif;
 }
 
 body{
-    overflow-x:hidden;
+    overflow:hidden;
     background:black;
+}
+
+/* ==========================
+   PANTALLA INICIAL
+========================== */
+
+#startScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:black;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:10000;
+}
+
+#startLogo{
+    width:250px;
+    max-width:80%;
+    margin-bottom:40px;
+}
+
+#enterBtn{
+
+    padding:18px 50px;
+
+    border:none;
+    border-radius:15px;
+
+    font-size:2rem;
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #0099ff,
+        #6a00ff
+    );
+
+    box-shadow:
+        0 0 20px rgba(0,153,255,.6),
+        0 0 40px rgba(106,0,255,.4);
+
+    transition:.3s;
+}
+
+#enterBtn:hover{
+    transform:scale(1.08);
 }
 
 /* ==========================
@@ -32,15 +87,20 @@ body{
 ========================== */
 
 #intro{
+    display:none;
+
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
     height:100vh;
+
     background:black;
-    display:flex;
+
     justify-content:center;
     align-items:center;
+
     z-index:9999;
 }
 
@@ -61,6 +121,7 @@ body{
 
 #main{
     display:none;
+
     width:100%;
     min-height:100vh;
 
@@ -71,6 +132,7 @@ body{
 }
 
 .overlay{
+
     width:100%;
     min-height:100vh;
 
@@ -93,13 +155,13 @@ body{
 .titulo{
     color:white;
     font-size:2rem;
-    font-weight:bold;
     text-align:center;
     margin-bottom:25px;
     text-shadow:0 0 10px rgba(0,0,0,.8);
 }
 
 #selecciones{
+
     width:420px;
     max-width:90%;
 
@@ -109,7 +171,6 @@ body{
     border-radius:15px;
 
     font-size:18px;
-    font-weight:bold;
 
     text-align:center;
 
@@ -135,7 +196,18 @@ body{
     text-shadow:0 0 10px rgba(0,0,0,.8);
 }
 
+/* RESPONSIVE */
+
 @media(max-width:768px){
+
+    #startLogo{
+        width:180px;
+    }
+
+    #enterBtn{
+        font-size:1.5rem;
+        padding:15px 40px;
+    }
 
     .logo{
         width:180px;
@@ -157,13 +229,34 @@ body{
 <body>
 
 <!-- ==========================
+     PANTALLA INICIAL
+========================== -->
+
+<div id="startScreen">
+
+    <img
+        src="logo.png"
+        id="startLogo"
+        alt="FIFA World Cup 2026"
+    >
+
+    <button id="enterBtn">
+        FWC26
+    </button>
+
+</div>
+
+<!-- ==========================
      INTRO
 ========================== -->
 
 <div id="intro">
 
     <video
-        id="introVideo" autoplay playsinline preload="auto">
+        id="introVideo"
+        playsinline
+        preload="auto"
+    >
         <source src="intro.mp4" type="video/mp4">
         Tu navegador no soporta video.
     </video>
@@ -257,29 +350,59 @@ body{
 
 <script>
 
-const video = document.getElementById("introVideo");
+const startScreen = document.getElementById("startScreen");
+const enterBtn = document.getElementById("enterBtn");
+
 const intro = document.getElementById("intro");
+const video = document.getElementById("introVideo");
+
 const main = document.getElementById("main");
 const music = document.getElementById("bgMusic");
+
+/* ==========================
+   BOTÓN FWC26
+========================== */
+
+enterBtn.addEventListener("click", () => {
+
+    startScreen.style.display = "none";
+
+    intro.style.display = "flex";
+
+    video.play();
+
+});
+
+/* ==========================
+   FIN DE LA INTRO
+========================== */
 
 video.addEventListener("ended", () => {
 
     intro.style.display = "none";
+
     main.style.display = "block";
 
-    music.play().catch(() => {
-        console.log("El navegador bloqueó la reproducción automática.");
+    music.play().catch(error => {
+        console.log(error);
     });
 
 });
 
-document.getElementById("selecciones").addEventListener("change", function(){
+/* ==========================
+   SELECTOR
+========================== */
+
+document
+.getElementById("selecciones")
+.addEventListener("change", function(){
 
     const seleccion = this.value;
 
     alert(
-        "Has seleccionado: " + seleccion +
-        "\n\nEn el siguiente paso agregaremos el temporizador del próximo partido."
+        "Has seleccionado: " +
+        seleccion +
+        "\n\nPróximamente agregaremos el temporizador del próximo partido."
     );
 
 });
