@@ -1,6 +1,6 @@
 {
   "short_name": "FWC26 Timer",
-  "name": "FIFA World Cup 26™ Timer",
+  "name": "FIFA World Cup 2026 Timer",
   "icons": [
     {
       "src": "logo.png",
@@ -8,12 +8,12 @@
       "sizes": "192x192"
     },
     {
-      "src": "icon-512.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/26TIMER/index.html",
   "background_color": "#ffffff",
   "display": "standalone",
   "theme_color": "#000000"

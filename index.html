@@ -2,13 +2,14 @@
 <!DOCTYPE html> 
 <html lang="es">
 <head> 
+  <link rel="manifest" href="/26TIMER/manifest.json">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FIFA World Cup 2026™ Timer</title>
   <link rel="icon" type="image/png" href="logo.png">
 <style>
 @font-face{
-  font-family:'FWC2026'; sans-serif;
+  font-family:'FWC2026';
   src:url('./FWC26.ttf') format('truetype'); 
 }
 *{margin:0;padding:0;box-sizing:border-box;font-family:'FWC2026',sans-serif}
@@ -203,9 +204,9 @@ document.getElementById('backBtn').onclick=()=>{
 </script>
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('Service Worker registrado', reg))
-      .catch(err => console.warn('Error al registrar', err));
+    navigator.serviceWorker.register('/26TIMER/sw.js')
+      .then(reg => console.log('Service Worker registrado con éxito', reg))
+      .catch(err => console.warn('Error al registrar el Service Worker', err));
   }
 </script>
 </body>

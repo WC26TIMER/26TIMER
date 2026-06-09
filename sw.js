@@ -1,5 +1,9 @@
-const CACHE_NAME = 'v1_cache_app';
-const urlsToCache = ['./', './index.html', './manifest.json'];
+const CACHE_NAME = 'fwc26-timer-v1';
+const urlsToCache = [
+  '/26TIMER/',
+  '/26TIMER/index.html',
+  '/26TIMER/manifest.json'
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(
