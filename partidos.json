@@ -1,0 +1,278 @@
+{
+  "Argentina": {
+    "rival": "Australia",
+    "fecha": "2026-06-01T20:00:00",
+    "escudo": "escudos/argentina.png",
+    "escudoRival": "escudos/australia.png"
+  },
+  "Australia": {
+    "rival": "Austria",
+    "fecha": "2026-06-02T20:00:00",
+    "escudo": "escudos/australia.png",
+    "escudoRival": "escudos/austria.png"
+  },
+  "Austria": {
+    "rival": "Bélgica",
+    "fecha": "2026-06-03T20:00:00",
+    "escudo": "escudos/austria.png",
+    "escudoRival": "escudos/belgica.png"
+  },
+  "Bélgica": {
+    "rival": "Brasil",
+    "fecha": "2026-06-04T20:00:00",
+    "escudo": "escudos/belgica.png",
+    "escudoRival": "escudos/brasil.png"
+  },
+  "Brasil": {
+    "rival": "Camerún",
+    "fecha": "2026-06-05T20:00:00",
+    "escudo": "escudos/brasil.png",
+    "escudoRival": "escudos/camerun.png"
+  },
+  "Camerún": {
+    "rival": "Canadá",
+    "fecha": "2026-06-06T20:00:00",
+    "escudo": "escudos/camerun.png",
+    "escudoRival": "escudos/canada.png"
+  },
+  "Canadá": {
+    "rival": "Chile",
+    "fecha": "2026-06-07T20:00:00",
+    "escudo": "escudos/canada.png",
+    "escudoRival": "escudos/chile.png"
+  },
+  "Chile": {
+    "rival": "Colombia",
+    "fecha": "2026-06-08T20:00:00",
+    "escudo": "escudos/chile.png",
+    "escudoRival": "escudos/colombia.png"
+  },
+  "Colombia": {
+    "rival": "Corea del Sur",
+    "fecha": "2026-06-09T20:00:00",
+    "escudo": "escudos/colombia.png",
+    "escudoRival": "escudos/corea_del_sur.png"
+  },
+  "Corea del Sur": {
+    "rival": "Costa Rica",
+    "fecha": "2026-06-10T20:00:00",
+    "escudo": "escudos/corea_del_sur.png",
+    "escudoRival": "escudos/costa_rica.png"
+  },
+  "Costa Rica": {
+    "rival": "Croacia",
+    "fecha": "2026-06-11T20:00:00",
+    "escudo": "escudos/costa_rica.png",
+    "escudoRival": "escudos/croacia.png"
+  },
+  "Croacia": {
+    "rival": "Dinamarca",
+    "fecha": "2026-06-12T20:00:00",
+    "escudo": "escudos/croacia.png",
+    "escudoRival": "escudos/dinamarca.png"
+  },
+  "Dinamarca": {
+    "rival": "Ecuador",
+    "fecha": "2026-06-13T20:00:00",
+    "escudo": "escudos/dinamarca.png",
+    "escudoRival": "escudos/ecuador.png"
+  },
+  "Ecuador": {
+    "rival": "Egipto",
+    "fecha": "2026-06-14T20:00:00",
+    "escudo": "escudos/ecuador.png",
+    "escudoRival": "escudos/egipto.png"
+  },
+  "Egipto": {
+    "rival": "España",
+    "fecha": "2026-06-15T20:00:00",
+    "escudo": "escudos/egipto.png",
+    "escudoRival": "escudos/españa.png"
+  },
+  "España": {
+    "rival": "Estados Unidos",
+    "fecha": "2026-06-16T20:00:00",
+    "escudo": "escudos/españa.png",
+    "escudoRival": "escudos/estados_unidos.png"
+  },
+  "Estados Unidos": {
+    "rival": "Francia",
+    "fecha": "2026-06-17T20:00:00",
+    "escudo": "escudos/estados_unidos.png",
+    "escudoRival": "escudos/francia.png"
+  },
+  "Francia": {
+    "rival": "Alemania",
+    "fecha": "2026-06-18T20:00:00",
+    "escudo": "escudos/francia.png",
+    "escudoRival": "escudos/alemania.png"
+  },
+  "Alemania": {
+    "rival": "Grecia",
+    "fecha": "2026-06-19T20:00:00",
+    "escudo": "escudos/alemania.png",
+    "escudoRival": "escudos/grecia.png"
+  },
+  "Grecia": {
+    "rival": "Inglaterra",
+    "fecha": "2026-06-20T20:00:00",
+    "escudo": "escudos/grecia.png",
+    "escudoRival": "escudos/inglaterra.png"
+  },
+  "Inglaterra": {
+    "rival": "Irán",
+    "fecha": "2026-06-21T20:00:00",
+    "escudo": "escudos/inglaterra.png",
+    "escudoRival": "escudos/iran.png"
+  },
+  "Irán": {
+    "rival": "Italia",
+    "fecha": "2026-06-22T20:00:00",
+    "escudo": "escudos/iran.png",
+    "escudoRival": "escudos/italia.png"
+  },
+  "Italia": {
+    "rival": "Japón",
+    "fecha": "2026-06-23T20:00:00",
+    "escudo": "escudos/italia.png",
+    "escudoRival": "escudos/japon.png"
+  },
+  "Japón": {
+    "rival": "Marruecos",
+    "fecha": "2026-06-24T20:00:00",
+    "escudo": "escudos/japon.png",
+    "escudoRival": "escudos/marruecos.png"
+  },
+  "Marruecos": {
+    "rival": "México",
+    "fecha": "2026-06-25T20:00:00",
+    "escudo": "escudos/marruecos.png",
+    "escudoRival": "escudos/mexico.png"
+  },
+  "México": {
+    "rival": "Nigeria",
+    "fecha": "2026-06-26T20:00:00",
+    "escudo": "escudos/mexico.png",
+    "escudoRival": "escudos/nigeria.png"
+  },
+  "Nigeria": {
+    "rival": "Nueva Zelanda",
+    "fecha": "2026-06-27T20:00:00",
+    "escudo": "escudos/nigeria.png",
+    "escudoRival": "escudos/nueva_zelanda.png"
+  },
+  "Nueva Zelanda": {
+    "rival": "Noruega",
+    "fecha": "2026-06-28T20:00:00",
+    "escudo": "escudos/nueva_zelanda.png",
+    "escudoRival": "escudos/noruega.png"
+  },
+  "Noruega": {
+    "rival": "Países Bajos",
+    "fecha": "2026-06-01T20:00:00",
+    "escudo": "escudos/noruega.png",
+    "escudoRival": "escudos/paises_bajos.png"
+  },
+  "Países Bajos": {
+    "rival": "Panamá",
+    "fecha": "2026-06-02T20:00:00",
+    "escudo": "escudos/paises_bajos.png",
+    "escudoRival": "escudos/panama.png"
+  },
+  "Panamá": {
+    "rival": "Paraguay",
+    "fecha": "2026-06-03T20:00:00",
+    "escudo": "escudos/panama.png",
+    "escudoRival": "escudos/paraguay.png"
+  },
+  "Paraguay": {
+    "rival": "Perú",
+    "fecha": "2026-06-04T20:00:00",
+    "escudo": "escudos/paraguay.png",
+    "escudoRival": "escudos/peru.png"
+  },
+  "Perú": {
+    "rival": "Polonia",
+    "fecha": "2026-06-05T20:00:00",
+    "escudo": "escudos/peru.png",
+    "escudoRival": "escudos/polonia.png"
+  },
+  "Polonia": {
+    "rival": "Portugal",
+    "fecha": "2026-06-06T20:00:00",
+    "escudo": "escudos/polonia.png",
+    "escudoRival": "escudos/portugal.png"
+  },
+  "Portugal": {
+    "rival": "Arabia Saudita",
+    "fecha": "2026-06-07T20:00:00",
+    "escudo": "escudos/portugal.png",
+    "escudoRival": "escudos/arabia_saudita.png"
+  },
+  "Arabia Saudita": {
+    "rival": "Senegal",
+    "fecha": "2026-06-08T20:00:00",
+    "escudo": "escudos/arabia_saudita.png",
+    "escudoRival": "escudos/senegal.png"
+  },
+  "Senegal": {
+    "rival": "Serbia",
+    "fecha": "2026-06-09T20:00:00",
+    "escudo": "escudos/senegal.png",
+    "escudoRival": "escudos/serbia.png"
+  },
+  "Serbia": {
+    "rival": "Sudáfrica",
+    "fecha": "2026-06-10T20:00:00",
+    "escudo": "escudos/serbia.png",
+    "escudoRival": "escudos/sudafrica.png"
+  },
+  "Sudáfrica": {
+    "rival": "Suecia",
+    "fecha": "2026-06-11T20:00:00",
+    "escudo": "escudos/sudafrica.png",
+    "escudoRival": "escudos/suecia.png"
+  },
+  "Suecia": {
+    "rival": "Suiza",
+    "fecha": "2026-06-12T20:00:00",
+    "escudo": "escudos/suecia.png",
+    "escudoRival": "escudos/suiza.png"
+  },
+  "Suiza": {
+    "rival": "Túnez",
+    "fecha": "2026-06-13T20:00:00",
+    "escudo": "escudos/suiza.png",
+    "escudoRival": "escudos/tunez.png"
+  },
+  "Túnez": {
+    "rival": "Turquía",
+    "fecha": "2026-06-14T20:00:00",
+    "escudo": "escudos/tunez.png",
+    "escudoRival": "escudos/turquia.png"
+  },
+  "Turquía": {
+    "rival": "Ucrania",
+    "fecha": "2026-06-15T20:00:00",
+    "escudo": "escudos/turquia.png",
+    "escudoRival": "escudos/ucrania.png"
+  },
+  "Ucrania": {
+    "rival": "Uruguay",
+    "fecha": "2026-06-16T20:00:00",
+    "escudo": "escudos/ucrania.png",
+    "escudoRival": "escudos/uruguay.png"
+  },
+  "Uruguay": {
+    "rival": "Venezuela",
+    "fecha": "2026-06-17T20:00:00",
+    "escudo": "escudos/uruguay.png",
+    "escudoRival": "escudos/venezuela.png"
+  },
+  "Venezuela": {
+    "rival": "Argentina",
+    "fecha": "2026-06-18T20:00:00",
+    "escudo": "escudos/venezuela.png",
+    "escudoRival": "escudos/argentina.png"
+  }
+}
