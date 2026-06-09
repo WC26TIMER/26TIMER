@@ -54,16 +54,16 @@
     "escudoRival": "escudos/Marruecos.png"
   },
   "Cabo Verde": {
-    "rival": "Canadá",
-    "fecha": "2026-06-20T20:00:00",
+    "rival": "España",
+    "fecha": "2026-06-15T11:00:00",
     "escudo": "escudos/cabo_verde.png",
-    "escudoRival": "escudos/canada.png"
+    "escudoRival": "escudos/España.png"
   },
   "Canadá": {
-    "rival": "Catar",
-    "fecha": "2026-06-21T20:00:00",
+    "rival": "Bosnia y Herzegovina",
+    "fecha": "2026-06-12T14:00:00",
     "escudo": "escudos/canada.png",
-    "escudoRival": "escudos/catar.png"
+    "escudoRival": "escudos/Bosnia y Herzegovina.png"
   },
   "Catar": {
     "rival": "Colombia",
