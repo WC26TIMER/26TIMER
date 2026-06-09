@@ -1,413 +1,160 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FIFA World Cup 2026 Timer</title>
-
+<title>FWC26</title>
 <style>
-
-@font-face {
-    font-family: 'FWC2026';
-    src: url('FWC2026-SemiExpandedBlack.e378fa1c.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@font-face{
+  font-family:'FWC2026';
+  src:url('FWC2026-SemiExpandedBlack.e378fa1c.ttf') format('truetype');
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'FWC2026', Arial, sans-serif;
-}
-
-body{
-    overflow:hidden;
-    background:black;
-}
-
-/* ==========================
-   PANTALLA INICIAL
-========================== */
-
-#startScreen{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:black;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    z-index:10000;
-}
-
-#startLogo{
-    width:250px;
-    max-width:80%;
-    margin-bottom:40px;
-}
-
-#enterBtn{
-
-    padding:18px 50px;
-
-    border:none;
-    border-radius:15px;
-
-    font-size:2rem;
-    cursor:pointer;
-
-    color:#000000;
-
-    background:linear-gradient(
-        135deg,
-        #ffffff,
-        #9b9b9b
-    );
-
-    box-shadow:
-        0 0 20px rgba(255,255,255,.6),
-        0 0 40px rgba(155,155,155,.4);
-
-    transition:.3s;
-}
-
-#enterBtn:hover{
-    transform:scale(1.08);
-}
-
-/* ==========================
-   INTRO
-========================== */
-
-#intro{
-    display:none;
-
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100vh;
-
-    background:black;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:9999;
-}
-
-#intro video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    pointer-events:none;
-
-    -webkit-user-select:none;
-    user-select:none;
-}
-
-/* ==========================
-   MAIN
-========================== */
-
-#main{
-    display:none;
-
-    width:100%;
-    min-height:100vh;
-
-    background-image:url("fondo.png");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-
-.overlay{
-
-    width:100%;
-    min-height:100vh;
-
-    background:rgba(0,0,0,.45);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
-}
-
-.logo{
-    width:220px;
-    max-width:80%;
-    margin-bottom:30px;
-}
-
-.titulo{
-    color:white;
-    font-size:2rem;
-    text-align:center;
-    margin-bottom:25px;
-    text-shadow:0 0 10px rgba(0,0,0,.8);
-}
-
-#selecciones{
-
-    width:420px;
-    max-width:90%;
-
-    padding:16px;
-
-    border:none;
-    border-radius:15px;
-
-    font-size:18px;
-
-    text-align:center;
-
-    background:white;
-    color:#111;
-
-    cursor:pointer;
-
-    outline:none;
-
-    box-shadow:0 0 20px rgba(255,255,255,.35);
-}
-
-#selecciones:hover{
-    transform:scale(1.02);
-}
-
-.info{
-    margin-top:25px;
-    color:white;
-    font-size:18px;
-    text-align:center;
-    text-shadow:0 0 10px rgba(0,0,0,.8);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-    #startLogo{
-        width:180px;
-    }
-
-    #enterBtn{
-        font-size:1.5rem;
-        padding:15px 40px;
-    }
-
-    .logo{
-        width:180px;
-    }
-
-    .titulo{
-        font-size:1.5rem;
-    }
-
-    #selecciones{
-        width:90%;
-    }
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'FWC2026',sans-serif}
+body{background:#000;color:#fff;overflow:hidden}
+#startScreen,#intro,#main,#matchView{position:absolute;inset:0}
+#startScreen{display:flex;flex-direction:column;justify-content:center;align-items:center;background:#000;z-index:5}
+#enterBtn{padding:18px 50px;border:none;border-radius:15px;font-size:2rem;cursor:pointer;color:#000;background:linear-gradient(135deg,#ffffff,#9b9b9b)}
+#intro{display:none;background:#000;z-index:4}
+#intro video{width:100%;height:100%;object-fit:cover}
+#main,#matchView{display:none;background:url('fondo.png') center/cover no-repeat}
+.overlay{min-height:100vh;background:rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center}
+.logo{width:220px;margin-bottom:20px}
+#selecciones{padding:16px;width:420px;max-width:90%}
+#matchView .overlay{justify-content:flex-start;padding-top:30px}
+#backBtn{align-self:flex-start;margin-left:20px;padding:12px 24px;border:none;border-radius:12px;background:linear-gradient(135deg,#ffffff,#9b9b9b);color:#000;cursor:pointer}
+.teams{display:flex;align-items:center;gap:40px;margin-top:40px}
+.team{text-align:center}
+.crest{width:140px;height:140px;object-fit:contain}
+.vs{font-size:3rem}
+.timer{display:flex;gap:40px;margin-top:60px}
+.timebox{text-align:center}
+.num{font-size:6rem}
+.label{font-size:1rem}
 </style>
 </head>
-
 <body>
 
-<!-- ==========================
-     PANTALLA INICIAL
-========================== -->
-
 <div id="startScreen">
-
-    <img
-        src="logo.png"
-        id="startLogo"
-        alt="FIFA World Cup 2026"
-    >
-
-    <button id="enterBtn">
-        FWC26
-    </button>
-
+<img src="logo.png" class="logo">
+<button id="enterBtn">FWC26</button>
 </div>
-
-<!-- ==========================
-     INTRO
-========================== -->
 
 <div id="intro">
-
-    <video
-        id="introVideo"
-        playsinline
-        preload="auto"
-    >
-        <source src="intro.mp4" type="video/mp4">
-        Tu navegador no soporta video.
-    </video>
-
+<video id="introVideo" playsinline preload="auto">
+<source src="intro.mp4" type="video/mp4">
+</video>
 </div>
 
-<!-- ==========================
-     MAIN
-========================== -->
-
 <div id="main">
+<audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
+<div class="overlay">
+<img src="logo.png" class="logo">
+<select id="selecciones">
+<option selected disabled>Selecciona una selección</option>
+<option>Argentina</option>
+<option>Brasil</option>
+<option>Colombia</option>
+<option>México</option>
+</select>
+</div>
+</div>
 
-    <audio id="bgMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+<div id="matchView">
+<audio id="tickAudio" loop><source src="tick.mp3" type="audio/mpeg"></audio>
+<div class="overlay">
+<button id="backBtn">← BACK</button>
 
-    <div class="overlay">
+<div class="teams">
+<div class="team">
+<img id="homeCrest" class="crest" src="escudos/default.png">
+<div id="homeName">Selección</div>
+</div>
 
-        <img
-            src="logo.png"
-            alt="FIFA World Cup 2026"
-            class="logo"
-        >
+<div class="vs">VS</div>
 
-        <div class="titulo">
-            FIFA WORLD CUP 2026™
-        </div>
+<div class="team">
+<img id="awayCrest" class="crest" src="escudos/default.png">
+<div id="awayName">Rival</div>
+</div>
+</div>
 
-        <select id="selecciones">
+<div class="timer">
+<div class="timebox"><div class="num" id="days">0</div><div class="label">DÍAS</div></div>
+<div class="timebox"><div class="num" id="hours">0</div><div class="label">HORAS</div></div>
+<div class="timebox"><div class="num" id="minutes">0</div><div class="label">MINUTOS</div></div>
+<div class="timebox"><div class="num" id="seconds">0</div><div class="label">SEGUNDOS</div></div>
+</div>
 
-            <option selected disabled>
-                Selecciona una selección
-            </option>
-
-            <option>Argentina</option>
-            <option>Australia</option>
-            <option>Austria</option>
-            <option>Bélgica</option>
-            <option>Brasil</option>
-            <option>Camerún</option>
-            <option>Canadá</option>
-            <option>Chile</option>
-            <option>Colombia</option>
-            <option>Corea del Sur</option>
-            <option>Costa Rica</option>
-            <option>Croacia</option>
-            <option>Dinamarca</option>
-            <option>Ecuador</option>
-            <option>Egipto</option>
-            <option>España</option>
-            <option>Estados Unidos</option>
-            <option>Francia</option>
-            <option>Alemania</option>
-            <option>Grecia</option>
-            <option>Inglaterra</option>
-            <option>Irán</option>
-            <option>Italia</option>
-            <option>Japón</option>
-            <option>Marruecos</option>
-            <option>México</option>
-            <option>Nigeria</option>
-            <option>Nueva Zelanda</option>
-            <option>Noruega</option>
-            <option>Países Bajos</option>
-            <option>Panamá</option>
-            <option>Paraguay</option>
-            <option>Perú</option>
-            <option>Polonia</option>
-            <option>Portugal</option>
-            <option>Arabia Saudita</option>
-            <option>Senegal</option>
-            <option>Serbia</option>
-            <option>Sudáfrica</option>
-            <option>Suecia</option>
-            <option>Suiza</option>
-            <option>Túnez</option>
-            <option>Turquía</option>
-            <option>Ucrania</option>
-            <option>Uruguay</option>
-            <option>Venezuela</option>
-
-        </select>
-
-        <div class="info">
-            Próximamente: temporizador del siguiente partido.
-        </div>
-
-    </div>
-
+</div>
 </div>
 
 <script>
+const startScreen=document.getElementById('startScreen');
+const intro=document.getElementById('intro');
+const video=document.getElementById('introVideo');
+const main=document.getElementById('main');
+const matchView=document.getElementById('matchView');
+const music=document.getElementById('bgMusic');
+const tick=document.getElementById('tickAudio');
 
-const startScreen = document.getElementById("startScreen");
-const enterBtn = document.getElementById("enterBtn");
+let partidos={};
+let timerInterval=null;
 
-const intro = document.getElementById("intro");
-const video = document.getElementById("introVideo");
+fetch('partidos.json')
+.then(r=>r.json())
+.then(data=>partidos=data)
+.catch(()=>console.log('partidos.json pendiente'));
 
-const main = document.getElementById("main");
-const music = document.getElementById("bgMusic");
+document.getElementById('enterBtn').onclick=()=>{
+ startScreen.style.display='none';
+ intro.style.display='block';
+ video.play();
+};
 
-/* ==========================
-   BOTÓN FWC26
-========================== */
+video.onended=()=>{
+ intro.style.display='none';
+ main.style.display='block';
+ music.play().catch(()=>{});
+};
 
-enterBtn.addEventListener("click", () => {
+document.getElementById('selecciones').onchange=(e)=>{
+ const team=e.target.value;
+ const p=partidos[team];
+ if(!p) return;
 
-    startScreen.style.display = "none";
+ main.style.display='none';
+ matchView.style.display='block';
 
-    intro.style.display = "flex";
+ document.getElementById('homeName').textContent=team;
+ document.getElementById('awayName').textContent=p.rival;
+ document.getElementById('homeCrest').src=p.escudo;
+ document.getElementById('awayCrest').src=p.escudoRival;
 
-    video.play();
+ tick.currentTime=0;
+ tick.play().catch(()=>{});
 
-});
+ clearInterval(timerInterval);
 
-/* ==========================
-   FIN DE LA INTRO
-========================== */
+ function update(){
+   const diff=new Date(p.fecha)-new Date();
+   const d=Math.max(0,diff);
+   document.getElementById('days').textContent=Math.floor(d/86400000);
+   document.getElementById('hours').textContent=Math.floor(d%86400000/3600000);
+   document.getElementById('minutes').textContent=Math.floor(d%3600000/60000);
+   document.getElementById('seconds').textContent=Math.floor(d%60000/1000);
+ }
+ update();
+ timerInterval=setInterval(update,1000);
+};
 
-video.addEventListener("ended", () => {
-
-    intro.style.display = "none";
-
-    main.style.display = "block";
-
-    music.play().catch(error => {
-        console.log(error);
-    });
-
-});
-
-/* ==========================
-   SELECTOR
-========================== */
-
-document
-.getElementById("selecciones")
-.addEventListener("change", function(){
-
-    const seleccion = this.value;
-
-    alert(
-        "Has seleccionado: " +
-        seleccion +
-        "\n\nPróximamente agregaremos el temporizador del próximo partido."
-    );
-
-});
-
+document.getElementById('backBtn').onclick=()=>{
+ matchView.style.display='none';
+ main.style.display='block';
+ tick.pause();
+ tick.currentTime=0;
+ clearInterval(timerInterval);
+};
 </script>
-
 </body>
 </html>
