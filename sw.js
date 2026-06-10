@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wc26-timer-v4';
+const CACHE_NAME = 'wc26-timer-v5';
 
 const ASSETS = [
   '/26TIMER/',

@@ -53,11 +53,91 @@ body{background:#000;color:#fff;overflow:hidden}
 
   color:#000;
 
-  text-decoration:none;
-
   cursor:pointer;
 
   z-index:100;
+}
+#reportModal{
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.7);
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:999999;
+
+}
+
+.reportBox{
+
+  width:500px;
+  max-width:90%;
+
+  background:#111;
+
+  border-radius:20px;
+
+  padding:25px;
+
+}
+
+.reportBox h2{
+
+  text-align:center;
+  margin-bottom:20px;
+
+}
+
+#bugText{
+
+  width:100%;
+  height:180px;
+
+  resize:none;
+
+  border:none;
+  border-radius:12px;
+
+  padding:15px;
+
+  font-size:16px;
+
+  color:#000;
+
+}
+
+.reportButtons{
+
+  margin-top:20px;
+
+  display:flex;
+  justify-content:center;
+  gap:15px;
+
+}
+
+.reportButtons button{
+
+  padding:12px 24px;
+
+  border:none;
+  border-radius:12px;
+
+  background:linear-gradient(
+    135deg,
+    #ffffff,
+    #9b9b9b
+  );
+
+  color:#000;
+
+  cursor:pointer;
+
 }
 .teams{display:flex;align-items:center;gap:40px;margin-top:40px}
 .team{text-align:center}
@@ -89,10 +169,11 @@ body{background:#000;color:#fff;overflow:hidden}
 <div id="main">
 <audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
 <div class="overlay">
-
 <img src="logo.png" class="logo">
-
 <select id="selecciones">
+  <button id="reportBtn">
+  Reportar un problema
+</button>
 <option selected disabled>Selecciona una selección</option>
 <option>Alemania</option>
 <option>Argelia</option>
@@ -143,17 +224,39 @@ body{background:#000;color:#fff;overflow:hidden}
 <option>Uzbekistán</option>
 <option>Uruguay</option>
 </select>
-
-<a
- id="reportBtn"
- href="mailto:spiritaviationdirect@gmail.com?subject=Reportar%20un%20problema%20FWC26&body=Describe%20el%20problema%20que%20encontraste:"
->
-Reportar un problema
-</a>
-
 </div>
 </div>
+<div id="reportModal">
 
+  <div class="reportBox">
+
+    <h2>Reportar un problema</h2>
+
+    <form id="reportForm">
+
+      <textarea
+        id="bugText"
+        placeholder="Describe el problema..."
+        required
+      ></textarea>
+
+      <div class="reportButtons">
+
+        <button type="submit">
+          ENVIAR
+        </button>
+
+        <button type="button" id="closeReport">
+          CANCELAR
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
 <div id="matchView">
 <audio id="tickAudio" loop><source src="tick.mp3" type="audio/mpeg"></audio>
 <div class="overlay">
@@ -286,6 +389,71 @@ document.getElementById('backBtn').onclick=()=>{
         .catch(err => console.error('Error al registrar el Service Worker:', err));
     });
   }
+  const reportBtn=document.getElementById('reportBtn');
+const reportModal=document.getElementById('reportModal');
+const closeReport=document.getElementById('closeReport');
+const reportForm=document.getElementById('reportForm');
+
+reportBtn.onclick=()=>{
+
+  reportModal.style.display='flex';
+
+};
+
+closeReport.onclick=()=>{
+
+  reportModal.style.display='none';
+
+};
+
+reportForm.onsubmit=async(e)=>{
+
+  e.preventDefault();
+
+  const mensaje=
+  document.getElementById('bugText').value;
+
+  const response=await fetch(
+    'https://api.web3forms.com/submit',
+    {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+
+        access_key:'361f6bb5-03b0-48e5-886e-acbaae9ee24a',
+
+        subject:'Reporte FWC26',
+
+        message:mensaje
+
+      })
+
+    }
+  );
+
+  const result=await response.json();
+
+  if(result.success){
+
+    alert(
+      'Reporte enviado correctamente.'
+    );
+
+    reportForm.reset();
+
+    reportModal.style.display='none';
+
+  }else{
+
+    alert(
+      'No se pudo enviar el reporte.'
+    );
+
+  }
+
+};
 </script>
 </body>
 </html> 
