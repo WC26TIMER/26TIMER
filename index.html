@@ -39,6 +39,26 @@ body{background:#000;color:#fff;overflow:hidden}
   display:none;
   z-index:99999;
 }
+#reportBtn{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+
+  padding:12px 24px;
+
+  border:none;
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#ffffff,#9b9b9b);
+
+  color:#000;
+
+  text-decoration:none;
+
+  cursor:pointer;
+
+  z-index:100;
+}
 .teams{display:flex;align-items:center;gap:40px;margin-top:40px}
 .team{text-align:center}
 .crest{width:140px;height:140px;object-fit:contain}
@@ -69,7 +89,9 @@ body{background:#000;color:#fff;overflow:hidden}
 <div id="main">
 <audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
 <div class="overlay">
+
 <img src="logo.png" class="logo">
+
 <select id="selecciones">
 <option selected disabled>Selecciona una selección</option>
 <option>Alemania</option>
@@ -121,6 +143,14 @@ body{background:#000;color:#fff;overflow:hidden}
 <option>Uzbekistán</option>
 <option>Uruguay</option>
 </select>
+
+<a
+ id="reportBtn"
+ href="mailto:spiritaviationdirect@gmail.com?subject=Reportar%20un%20problema%20FWC26&body=Describe%20el%20problema%20que%20encontraste:"
+>
+Reportar un problema
+</a>
+
 </div>
 </div>
 
