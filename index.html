@@ -46,6 +46,9 @@ body{background:#000;color:#fff;overflow:hidden}
   right:20px;
   bottom:20px;
 
+  min-width:220px;
+  min-height:50px;
+
   padding:12px 24px;
 
   border:none;
@@ -61,7 +64,9 @@ body{background:#000;color:#fff;overflow:hidden}
 
   cursor:pointer;
 
-  z-index:999999;
+  z-index:99999999;
+
+  display:none;
 
 }
 #reportModal{
@@ -230,13 +235,15 @@ body{background:#000;color:#fff;overflow:hidden}
 <option>Uzbekistán</option>
 <option>Uruguay</option>
 </select>
+
+</div>
+</div>
+
 <button id="reportBtn">
   Reportar un problema
 </button>
-</div>
-</div>
-<div id="reportModal">
 
+<div id="reportModal">
   <div class="reportBox">
 
     <h2>Reportar un problema</h2>
@@ -343,6 +350,8 @@ function finalizarIntro(){
 
  intro.style.display='none';
  main.style.display='block';
+
+ document.getElementById('reportBtn').style.display='block';
 
  music.play().catch(()=>{});
 
