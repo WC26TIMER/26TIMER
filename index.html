@@ -40,7 +40,9 @@ body{background:#000;color:#fff;overflow:hidden}
   z-index:99999;
 }
 #reportBtn{
-  position:absolute;
+
+  position:fixed;
+
   right:20px;
   bottom:20px;
 
@@ -49,13 +51,18 @@ body{background:#000;color:#fff;overflow:hidden}
   border:none;
   border-radius:12px;
 
-  background:linear-gradient(135deg,#ffffff,#9b9b9b);
+  background:linear-gradient(
+    135deg,
+    #ffffff,
+    #9b9b9b
+  );
 
   color:#000;
 
   cursor:pointer;
 
-  z-index:100;
+  z-index:999999;
+
 }
 #reportModal{
 
@@ -171,10 +178,9 @@ body{background:#000;color:#fff;overflow:hidden}
 <div class="overlay">
 <img src="logo.png" class="logo">
 <select id="selecciones">
-  <button id="reportBtn">
-  Reportar un problema
-</button>
-<option selected disabled>Selecciona una selección</option>
+<option selected disabled>
+  Selecciona una selección
+</option>
 <option>Alemania</option>
 <option>Argelia</option>
 <option>Arabia Saudí</option>
@@ -224,6 +230,9 @@ body{background:#000;color:#fff;overflow:hidden}
 <option>Uzbekistán</option>
 <option>Uruguay</option>
 </select>
+<button id="reportBtn">
+  Reportar un problema
+</button>
 </div>
 </div>
 <div id="reportModal">
@@ -422,13 +431,15 @@ reportForm.onsubmit=async(e)=>{
       },
       body:JSON.stringify({
 
-        access_key:'361f6bb5-03b0-48e5-886e-acbaae9ee24a',
+  access_key:'361f6bb5-03b0-48e5-886e-acbaae9ee24a',
 
-        subject:'Reporte FWC26',
+  subject:'Reporte FWC26',
 
-        message:mensaje
+  from_name:'FWC26 Timer',
 
-      })
+  message:mensaje
+
+})
 
     }
   );
