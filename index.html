@@ -19,8 +19,48 @@ body{background:#000;color:#fff;overflow:hidden}
 #enterBtn{padding:18px 50px;border:none;border-radius:15px;font-size:2rem;cursor:pointer;color:#000;background:linear-gradient(135deg,#ffffff,#9b9b9b)}
 #intro{display:none;background:#000;z-index:4}
 #intro video{width:100%;height:100%;object-fit:cover}
-#main,#matchView{display:none;background:url('fondo.png') center/cover no-repeat}
+#main,
+#matchView,
+#worldCupView,
+#winnerVideoView{
+    display:none;
+    background:url('fondo.png') center/cover no-repeat
+}
 .overlay{min-height:100vh;background:rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center}
+#worldCupBtn{
+
+  position:absolute;
+
+  top:25px;
+  right:25px;
+
+  padding:10px 18px;
+
+  border:1px solid rgba(255,255,255,.4);
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(10px);
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:14px;
+
+  transition:.3s;
+
+}
+
+#worldCupBtn:hover{
+
+  background:rgba(255,255,255,.15);
+
+  transform:scale(1.05);
+
+}
 .logo{width:220px;margin-bottom:20px}
 #selecciones{padding:16px;width:420px;max-width:90%}
 #matchView .overlay{justify-content:flex-start;padding-top:30px}
@@ -158,7 +198,107 @@ body{background:#000;color:#fff;overflow:hidden}
 .timer{display:flex;gap:40px;margin-top:60px}
 .timebox{text-align:center}
 .num{font-size:6rem}
-.label{font-size:1rem}
+.label{
+font-size:1rem
+}
+
+/* PEGAR AQUÍ */
+
+#worldCupView{
+display:none;
+background:url('fondo.png') center/cover no-repeat;
+}
+
+#winnerVideoView{
+display:none;
+background:black;
+}
+
+#winnerVideo{
+width:100%;
+height:100vh;
+object-fit:cover;
+}
+
+#worldBackBtn{
+
+align-self:flex-start;
+
+margin-left:20px;
+
+padding:12px 24px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(
+135deg,
+#ffffff,
+#9b9b9b
+);
+
+color:#000;
+
+cursor:pointer;
+
+}
+
+#wcTitle{
+
+font-size:4rem;
+
+margin-bottom:40px;
+
+}
+
+#winnerSection{
+
+display:none;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:15px;
+
+margin-top:50px;
+
+}
+
+#winnerName{
+
+font-size:3rem;
+
+}
+
+#winnerText{
+
+font-size:1.2rem;
+
+}
+
+#playWinnerVideo{
+
+padding:14px 24px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(
+135deg,
+#ffffff,
+#9b9b9b
+);
+
+color:#000;
+
+cursor:pointer;
+
+}
+
+</style>
 </style>
 </head>
 <body>
@@ -182,6 +322,9 @@ body{background:#000;color:#fff;overflow:hidden}
 <audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
 <div class="overlay">
 <img src="logo.png" class="logo">
+<button id="worldCupBtn">
+WORLD CUP END
+</button>
 <select id="selecciones">
 <option selected disabled>
   Selecciona una selección
@@ -273,6 +416,84 @@ body{background:#000;color:#fff;overflow:hidden}
   </div>
 
 </div>
+<div id="winnerVideoView">
+
+<video
+id="winnerVideo"
+controls
+playsinline
+>
+
+<source
+src="ganador.mp4"
+type="video/mp4"
+>
+
+</video>
+
+</div>
+<div id="worldCupView">
+
+<div class="overlay">
+
+<button id="worldBackBtn">
+← BACK
+</button>
+
+<img src="logo.png" class="logo">
+
+<div id="wcTitle">
+COUNTDOWN
+</div>
+
+<div class="timer">
+
+<div class="timebox">
+<div class="num" id="wcDays">0</div>
+<div class="label">DÍAS</div>
+</div>
+
+<div class="timebox">
+<div class="num" id="wcHours">0</div>
+<div class="label">HORAS</div>
+</div>
+
+<div class="timebox">
+<div class="num" id="wcMinutes">0</div>
+<div class="label">MINUTOS</div>
+</div>
+
+<div class="timebox">
+<div class="num" id="wcSeconds">0</div>
+<div class="label">SEGUNDOS</div>
+</div>
+
+</div>
+
+<div id="winnerSection">
+
+<img
+id="winnerCrest"
+class="crest"
+src="escudos/tbd.png"
+>
+
+<div id="winnerName">
+TBD
+</div>
+
+<div id="winnerText">
+Ganador de la FWC 2026
+</div>
+
+<button id="playWinnerVideo">
+REPRODUCIR VIDEO
+</button>
+
+</div>
+
+</div>
+</div>
 <div id="matchView">
 <audio id="tickAudio" loop><source src="tick.mp3" type="audio/mpeg"></audio>
 <div class="overlay">
@@ -311,7 +532,18 @@ const matchView=document.getElementById('matchView');
 const music=document.getElementById('bgMusic');
 const tick=document.getElementById('tickAudio');
 const skipBtn=document.getElementById('skipBtn');
+const worldCupView=
+document.getElementById('worldCupView');
 
+const winnerVideoView=
+document.getElementById('winnerVideoView');
+const WORLD_CUP_END='2026-07-19T20:00:00';
+const WORLD_CUP_WINNER={
+nombre:'TBD',
+escudo:'escudos/tbd.png'
+};
+
+let worldTimer=null;
 let partidos={};
 let timerInterval=null;
 
@@ -397,6 +629,111 @@ document.getElementById('backBtn').onclick=()=>{
  tick.pause();
  tick.currentTime=0;
  clearInterval(timerInterval);
+};
+document.getElementById('worldCupBtn').onclick=()=>{
+
+main.style.display='none';
+
+worldCupView.style.display='block';
+
+startWorldCountdown();
+
+};
+
+document.getElementById('worldBackBtn').onclick=()=>{
+
+worldCupView.style.display='none';
+
+main.style.display='block';
+
+clearInterval(worldTimer);
+
+};
+
+function startWorldCountdown(){
+
+clearInterval(worldTimer);
+
+function updateWorld(){
+
+const diff=
+new Date(WORLD_CUP_END)-new Date();
+
+if(diff<=0){
+
+clearInterval(worldTimer);
+
+showWinner();
+
+return;
+
+}
+
+document.getElementById('wcDays').textContent=
+Math.floor(diff/86400000);
+
+document.getElementById('wcHours').textContent=
+Math.floor(diff%86400000/3600000);
+
+document.getElementById('wcMinutes').textContent=
+Math.floor(diff%3600000/60000);
+
+document.getElementById('wcSeconds').textContent=
+Math.floor(diff%60000/1000);
+
+}
+
+updateWorld();
+
+worldTimer=setInterval(
+updateWorld,
+1000
+);
+
+}
+
+function showWinner(){
+
+document.querySelector('.timer')
+.style.transform='translateY(-300px)';
+
+document.getElementById('wcTitle')
+.style.transform='translateY(-300px)';
+
+setTimeout(()=>{
+
+document.querySelector('.timer')
+.style.display='none';
+
+document.getElementById('wcTitle')
+.style.display='none';
+
+document.getElementById('winnerSection')
+.style.display='flex';
+
+document.getElementById('winnerName')
+.textContent=
+WORLD_CUP_WINNER.nombre;
+
+document.getElementById('winnerCrest')
+.src=
+WORLD_CUP_WINNER.escudo;
+
+},1000);
+
+}
+
+document.getElementById('playWinnerVideo')
+.onclick=()=>{
+
+worldCupView.style.display='none';
+
+winnerVideoView.style.display='block';
+
+document
+.getElementById('winnerVideo')
+.play();
+
 };
 </script>
 <script>
