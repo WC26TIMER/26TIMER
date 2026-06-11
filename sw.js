@@ -1,4 +1,5 @@
-const CACHE_NAME = 'wc26-timer-v8.5';
+const CACHE_NAME = 'wc26-timer-v10';
+self.skipWaiting();
 
 const ASSETS = [
   '/26TIMER/',
@@ -45,6 +46,16 @@ self.addEventListener('fetch', event => {
 
     fetch(event.request)
       .catch(() => caches.match(event.request))
+
+  );
+
+});
+
+self.addEventListener('activate', event => {
+
+  event.waitUntil(
+
+    clients.claim()
 
   );
 
