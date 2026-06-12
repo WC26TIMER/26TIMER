@@ -339,7 +339,92 @@ color:#000;
 cursor:pointer;
 
 }
+/* ========================================================
+   AJUSTES RESPONSIVOS PARA CELULARES (MODO VERTICAL)
+   ======================================================== */
+@media (max-width: 500px) {
+  /* Permitir scroll vertical solo si el contenido es más alto que la pantalla */
+  body {
+    overflow-y: auto !important;
+  }
 
+  /* Ajustar los títulos principales */
+  #wcTitle {
+    font-size: 2.2rem !important;
+    text-align: center;
+  }
+
+  /* Reducir logos */
+  .logo, #worldLogo {
+    width: 140px !important;
+  }
+
+  /* --- SECCIÓN DE EQUIPOS (VS) --- */
+  .teams {
+    flex-direction: column !important; /* Coloca un equipo sobre otro */
+    gap: 15px !important;
+    margin-top: 20px !important;
+  }
+
+  .crest {
+    width: 90px !important; /* Achica los escudos para que quepan */
+    height: 90px !important;
+  }
+
+  .vs {
+    font-size: 1.8rem !important;
+    margin: 5px 0;
+  }
+
+  /* --- SECCIÓN DE LA CUENTA REGRESIVA --- */
+  .timer {
+    gap: 15px !important; /* Reduce el espacio entre los bloques de tiempo */
+    margin-top: 25px !important;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .timebox {
+    min-width: 65px; /* Asegura un tamaño uniforme */
+  }
+
+  .num {
+    font-size: 2.8rem !important; /* Reduce los números gigantes (de 6rem a 2.8rem) */
+    line-height: 1;
+  }
+
+  .label {
+    font-size: 0.75rem !important; /* Letras de DÍAS, HORAS, etc., más compactas */
+    margin-top: 5px;
+  }
+
+  /* --- AJUSTES DE BOTONES Y MENÚS --- */
+  #selecciones {
+    width: 85% !important; /* El buscador se adapta al ancho de la pantalla */
+  }
+
+  #worldCupBtn {
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 11px !important;
+    padding: 8px 14px !important;
+  }
+
+  #backBtn {
+    margin-left: 15px !important;
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+  }
+
+  /* Seccion del ganador */
+  #winnerSection {
+    margin-top: 20px !important;
+  }
+  
+  #winnerName {
+    font-size: 2rem !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -577,7 +662,7 @@ BACK
 </div>
 
 <script>
-  const APP_VERSION='1.0.19';
+  const APP_VERSION='1.0.20';
 const startScreen=document.getElementById('startScreen');
 const intro=document.getElementById('intro');
 const video=document.getElementById('introVideo');
