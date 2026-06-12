@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wc26-timer-v17';
+const CACHE_NAME = 'wc26-timer-v19';
 self.skipWaiting();
 
 const ASSETS = [
