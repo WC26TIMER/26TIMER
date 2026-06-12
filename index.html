@@ -365,7 +365,7 @@ cursor:pointer;
 </audio>
 
 <audio id="endMusic" loop>
-  <source src="endsong.mp4" type="audio/mp4">
+  <source src="endsong.mp3" type="audio/mpeg">
 </audio>
 <div class="overlay">
 <img src="logo.png" class="logo">
@@ -717,10 +717,10 @@ function finalizarIntro(){
 }
 
 video.onended=finalizarIntro;
-setInterval(
-checkVersion,
-60000
-);
+//setInterval(
+//checkVersion,
+//60000
+//);
 console.log("worldCupBtn encontrado");
 worldCupBtn.onclick=()=>{
 
