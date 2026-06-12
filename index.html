@@ -707,6 +707,7 @@ skipBtn.onclick=()=>{
 
 function finalizarIntro(){
 
+   console.trace("finalizarIntro ejecutada");
  intro.style.display='none';
  main.style.display='block';
 
@@ -931,6 +932,7 @@ document
     });
   }
   const reportBtn=document.getElementById('reportBtn');
+  reportBtn.style.display='none';
 const reportModal=document.getElementById('reportModal');
 const closeReport=document.getElementById('closeReport');
 const reportForm=document.getElementById('reportForm');
