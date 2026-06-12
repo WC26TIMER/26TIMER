@@ -718,9 +718,32 @@ function finalizarIntro(){
 
 }
 
+async function checkVersion(){
+try{
+const response=
+await fetch(
+'version.json?t='+Date.now()
+);
+const data=
+await response.json();
+if(data.version!==APP_VERSION){
+document
+.getElementById('updateBtn')
+.style.display='block';
+}
+
+}catch(e){
+
+console.log(e);
+
+}
+
+}
 video.onended=finalizarIntro;
 console.log(typeof checkVersion);
-setInterval(checkVersion,60000);
+setInterval(()=>{
+  checkVersion();
+},60000);
 console.log("worldCupBtn encontrado");
 
 document.getElementById('selecciones').onchange=(e)=>{
@@ -924,27 +947,7 @@ closeReport.onclick=()=>{
 
 };
 
-async function checkVersion(){
-try{
-const response=
-await fetch(
-'version.json?t='+Date.now()
-);
-const data=
-await response.json();
-if(data.version!==APP_VERSION){
-document
-.getElementById('updateBtn')
-.style.display='block';
-}
 
-}catch(e){
-
-console.log(e);
-
-}
-
-}
 reportForm.onsubmit=async(e)=>{
 
   e.preventDefault();
